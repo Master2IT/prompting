@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.main {
+  background: linear-gradient(225deg, #dbfaff 0%, #ffe3d1 100%);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 0;
+}
+.container *,
+nav,
+button,
+a {
+  z-index: 10 !important;
+}
+
+.btn_gradient {
+  background-color: #932069;
+  background: linear-gradient(45deg, #fc6020 20%, #932069 60%, #fc6020 100%);
+}
+
+.purple_gradient {
+  color: #932069;
+  background-image: linear-gradient(45deg, #932069 31%, #fc6020 71%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+.btn,
+button,
+summary,
+a {
+  @apply !rounded-full;
+}
+
+.grid_cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-flow: dense;
+  grid-template-rows: min-content;
+}
+.grid_cards .card:nth-child(odd) {
+  grid-row-end: span 3;
+}
