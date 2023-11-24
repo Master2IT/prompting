@@ -10,7 +10,7 @@ const Prompt = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch("/api/prompt");
+      const response = await fetch("/api/prompt", { cache: "no-store" });
       const _data = await response.json();
       setData(_data);
     };
