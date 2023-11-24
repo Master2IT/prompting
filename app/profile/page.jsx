@@ -17,10 +17,10 @@ const MyProfile = () => {
     };
 
     if (session?.user.id) fetchData();
-    // else {
-    //   router.push("/");
-    // }
-  }, [session?.user.id]);
+    else {
+      router.push("/");
+    }
+  }, [session]);
 
   const handleEdit = (id) => {
     router.push(`/update-prompt?id=${id}`);

@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const Nav = () => {
   const { data: session } = useSession();
@@ -84,8 +84,20 @@ const Nav = () => {
 };
 
 const Menu = ({ image, name }) => {
+  const dropdown = useRef(null);
+
+  useEffect(() => {
+    function handleClick(event) {
+      // if (dropdown.current && !dropdown.current.contains(event.target))
+      dropdown.current.removeAttribute("open");
+    }
+    window.addEventListener("click", handleClick);
+    // clean up
+    return () => window.removeEventListener("click", handleClick);
+  }, []);
+
   return (
-    <details>
+    <details ref={dropdown}>
       <summary>
         {name}
         <Image

@@ -58,6 +58,6 @@ a {
   grid-auto-flow: dense;
   grid-template-rows: min-content;
 }
-.grid_cards .card:nth-child(odd) {
+/* .grid_cards .card:nth-child(odd) {
   grid-row-end: span 3;
-}
+} */
