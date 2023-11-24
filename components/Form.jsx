@@ -19,7 +19,10 @@ const Form = ({ type, data, setData, submitting, handleSubmit }) => {
       console.log(existsTag);
 
       if (existsTag == -1) {
-        const newTags = [...data.tags, tag.replace(" ", "").toLowerCase()];
+        const newTags = [
+          ...data.tags,
+          tag.replace(" ", "").replace("#", "").toLowerCase(),
+        ];
         setData({ ...data, tags: newTags });
       }
 
