@@ -7,12 +7,15 @@ import { useState, useEffect } from "react";
 const Nav = () => {
   const { data: session } = useSession();
   const [providers, setProviders] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const onSetProviders = async () => {
+      setLoading(true);
       const response = await getProviders();
 
       setProviders(response);
+      setLoading(false);
     };
 
     onSetProviders();
@@ -26,7 +29,7 @@ const Nav = () => {
         </Link>
       </div>
       <ul className="menu menu-horizontal items-center">
-        {session?.user ? (
+        {session?.user.id ? (
           <>
             <li className="md:flex hidden mr-10">
               <Link
@@ -45,7 +48,7 @@ const Nav = () => {
           Object.values(providers).map((provider) => (
             <button
               key={provider.name}
-              onClick={signIn}
+              onClick={() => !loading && signIn()}
               className="btn btn-sm px-5 btn-primary btn-outline"
             >
               <svg
@@ -64,7 +67,14 @@ const Nav = () => {
                   <path strokeLinejoin="round" d="M4 12h10m0 0l-3-3m3 3l-3 3" />
                 </g>
               </svg>
-              Sign in
+              {loading ? (
+                <>
+                  Loading
+                  <span className="loading loading-dots loading-xs"></span>
+                </>
+              ) : (
+                "Sign in"
+              )}
             </button>
           ))
         )}

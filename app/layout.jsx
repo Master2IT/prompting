@@ -64,7 +64,7 @@ const RootLayout = ({ children }) => {
         <link rel="shortcut icon" href="/favicon.ico" />
 
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:url" content="https://promptingg.vercel.com" />
+        <meta name="twitter:url" content="https://promptingg.vercel.app" />
         <meta name="twitter:title" content="Prompting" />
         <meta
           name="twitter:description"
@@ -72,7 +72,7 @@ const RootLayout = ({ children }) => {
         />
         <meta
           name="twitter:image"
-          content="https://promptingg.vercel.com/icons/android-chrome-192x192.png"
+          content="https://promptingg.vercel.app/icons/android-chrome-192x192.png"
         />
         <meta name="twitter:creator" content="@Master2iT" />
         <meta property="og:type" content="website" />
@@ -82,10 +82,10 @@ const RootLayout = ({ children }) => {
           content="Create your text to generate with AI to envision how the world will operate."
         />
         <meta property="og:site_name" content="Prompting" />
-        <meta property="og:url" content="https://promptingg.vercel.com" />
+        <meta property="og:url" content="https://promptingg.vercel.app" />
         <meta
           property="og:image"
-          content="https://promptingg.vercel.com/icons/apple-touch-icon.png"
+          content="https://promptingg.vercel.app/icons/apple-touch-icon.png"
         />
       </head>
       <body>
