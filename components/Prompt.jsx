@@ -11,7 +11,8 @@ const Prompt = () => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch("/api/prompt");
-      setData(await response.json());
+      const _data = await response.json();
+      setData(_data);
     };
 
     fetchData();
