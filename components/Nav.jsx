@@ -7,15 +7,12 @@ import { useState, useEffect, useRef } from "react";
 const Nav = () => {
   const { data: session } = useSession();
   const [providers, setProviders] = useState(null);
-  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const onSetProviders = async () => {
-      setLoading(true);
       const response = await getProviders();
 
       setProviders(response);
-      setLoading(false);
     };
 
     onSetProviders();
@@ -43,12 +40,11 @@ const Nav = () => {
               <Menu name={session?.user.name} image={session?.user.image} />
             </li>
           </>
-        ) : (
-          providers &&
+        ) : providers ? (
           Object.values(providers).map((provider) => (
             <button
               key={provider.name}
-              onClick={() => !loading && signIn()}
+              onClick={signIn}
               className="btn btn-sm px-5 btn-primary btn-outline"
             >
               <svg
@@ -67,16 +63,30 @@ const Nav = () => {
                   <path strokeLinejoin="round" d="M4 12h10m0 0l-3-3m3 3l-3 3" />
                 </g>
               </svg>
-              {loading ? (
-                <>
-                  Loading
-                  <span className="loading loading-dots loading-xs"></span>
-                </>
-              ) : (
-                "Sign in"
-              )}
+              Sign in
             </button>
           ))
+        ) : (
+          <button className="btn btn-sm px-5 btn-primary btn-outline">
+            <svg
+              width="1.2rem"
+              height="1.2rem"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                fill="none"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeWidth="1.5"
+              >
+                <path d="M20 12a8 8 0 0 0-8-8m0 16a7.985 7.985 0 0 0 6.245-3" />
+                <path strokeLinejoin="round" d="M4 12h10m0 0l-3-3m3 3l-3 3" />
+              </g>
+            </svg>
+            Loading
+            <span className="loading loading-dots loading-xs"></span>
+          </button>
         )}
       </ul>
     </nav>
