@@ -21,7 +21,7 @@ const Nav = () => {
   return (
     <nav className="navbar">
       <div className="flex-1">
-        <Link href="/" className="btn btn-ghost text-xl">
+        <Link href="/" className="btn btn-ghost hover:bg-transparent text-xl">
           Prompting
         </Link>
       </div>
@@ -110,7 +110,7 @@ const Menu = ({ image, name }) => {
           </Link>
         </li>
         <li>
-          <Link href="/create-prompt">
+          <Link href="/profile">
             <svg
               width="1.2rem"
               height="1.2rem"

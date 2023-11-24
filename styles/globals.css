@@ -13,11 +13,23 @@
   right: 0;
   z-index: 0;
 }
+
+section,
+.container {
+  position: relative;
+}
+
 .container *,
 nav,
 button,
-a {
+a,
+section *,
+section {
   z-index: 10 !important;
+}
+
+.menu * {
+  z-index: 20 !important;
 }
 
 .btn_gradient {

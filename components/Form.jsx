@@ -20,7 +20,6 @@ const Form = ({ type, data, setData, submitting, handleSubmit }) => {
 
       if (existsTag == -1) {
         const newTags = [...data.tags, tag.replace(" ", "").toLowerCase()];
-        console.log(newTags);
         setData({ ...data, tags: newTags });
       }
 
@@ -93,6 +92,7 @@ const Form = ({ type, data, setData, submitting, handleSubmit }) => {
             <span className="label-text font-medium">Your AI Prompt</span>
           </label>
           <textarea
+            value={data.prompt}
             onInput={(e) => setData({ ...data, prompt: e.target.value })}
             className="textarea textarea-bordered h-24"
             placeholder="Write your prompt here ..."
