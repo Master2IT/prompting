@@ -20,7 +20,7 @@ const MyProfile = () => {
     // else {
     //   router.push("/");
     // }
-  }, []);
+  }, [session?.user.id]);
 
   const handleEdit = (id) => {
     router.push(`/update-prompt?id=${id}`);
