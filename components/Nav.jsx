@@ -21,8 +21,15 @@ const Nav = () => {
   return (
     <nav className="navbar">
       <div className="flex-1">
-        <Link href="/" className="btn btn-ghost hover:bg-transparent text-xl">
-          Prompting
+        <Link href="/" className="p-3 text-xl">
+          {/* Prompting */}
+          <Image
+            src="/assets/images/logo.png"
+            data-glitch="glitch"
+            className="glitch"
+            width={75}
+            height={75}
+          />
         </Link>
       </div>
       <ul className="menu menu-horizontal items-center">

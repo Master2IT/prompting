@@ -34,10 +34,11 @@ const PromptCard = ({
             />
             <h3 className="flex flex-col">
               <span className="text-gray-700 capitalize">
-                {data.creator.username.replace("_", " ")}
+                {data.creator.name}
               </span>
-              <span className="text-sm font-normal text-gray-600">
-                {data.creator.email}
+              <span className="text-sm font-normal text-gray-500">
+                {/* @{data.creator.username} */}
+                {new Date(data.createdAt).toLocaleString()}
               </span>
             </h3>
           </div>
