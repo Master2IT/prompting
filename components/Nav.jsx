@@ -26,9 +26,9 @@ const Nav = () => {
           <Image
             src="/assets/images/logo.png"
             data-glitch="glitch"
-            className="glitch"
-            width={75}
-            height={75}
+            className="glitch w-[85px] h-[75px]"
+            width={1000}
+            height={1000}
           />
         </Link>
       </div>
