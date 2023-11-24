@@ -19,7 +19,7 @@ const Nav = () => {
   }, []);
 
   return (
-    <nav className="navbar">
+    <nav className="navbar items-start">
       <div className="flex-1">
         <Link href="/" className="p-3 text-xl">
           {/* Prompting */}
