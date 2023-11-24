@@ -16,7 +16,7 @@ const PromptSchema = new Schema({
   createdAt: {
     type: Date,
   },
-  updateAt: {
+  updatedAt: {
     type: Date,
   },
   isActive: {
