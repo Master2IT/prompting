@@ -10,7 +10,7 @@ const Profile = ({ name, desc, data, handleEdit, handleDelete }) => {
       <p className="mt-2 leading-7 text-gray-700">{desc}</p>
 
       {data.length ? (
-        <div className="md:grid md:grid-cols-3 md:gap-5 my-10">
+        <div className="grid md:grid-cols-3 gap-5 my-10">
           {data.map((prompt, i) => (
             <PromptCard
               key={prompt._id}
