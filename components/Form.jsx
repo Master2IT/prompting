@@ -116,7 +116,11 @@ const Form = ({ type, data, setData, submitting, handleSubmit }) => {
             onKeyDown={handleEnterTag}
             className="input input-bordered w-full"
           />
-
+          <label className="label">
+            <span className="label-text-alt text-gray-500">
+              Press <span className="font-bold">Enter</span> to add
+            </span>
+          </label>
           <div className="mt-3">
             {data?.tags?.length ? (
               <div className="flex gap-2 flex-wrap">

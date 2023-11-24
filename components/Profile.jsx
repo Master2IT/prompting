@@ -3,14 +3,14 @@ import Image from "next/image";
 
 const Profile = ({ name, desc, data, handleEdit, handleDelete }) => {
   return (
-    <section>
+    <section className="my-5">
       <h1 className="text-3xl leading-10 font-bold purple_gradient">
         {name} Profile
       </h1>
       <p className="mt-2 leading-7 text-gray-700">{desc}</p>
 
       {data.length ? (
-        <div className="grid_cards gap-5 my-10">
+        <div className="md:grid md:grid-cols-3 md:gap-5 my-10">
           {data.map((prompt, i) => (
             <PromptCard
               key={prompt._id}

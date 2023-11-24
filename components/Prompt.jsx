@@ -51,7 +51,7 @@ const Prompt = () => {
 
 const PromptCardList = ({ data, handleTagClick }) => {
   return (
-    <div className="grid_cards gap-5">
+    <div className="md:grid md:grid-cols-3 md:gap-5">
       {data.map((prompt, i) => (
         <PromptCard
           key={prompt._id}
