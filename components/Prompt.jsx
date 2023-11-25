@@ -86,17 +86,20 @@ const Prompt = () => {
               className="input rounded-full input-bordered w-full"
             />
             <label className="label mx-5">
-              <span className="label-text-alt">
-                Press <span className="font-bold">Enter</span> to see the result
-              </span>
               {search && (
-                <button
-                  type="button"
-                  onClick={resetSearch}
-                  className="text-gray-500 border-b border-gray-400 !rounded-none label-text-alt"
-                >
-                  Clear search
-                </button>
+                <>
+                  <span className="label-text-alt">
+                    Press <span className="font-bold">Enter</span> to see the
+                    result
+                  </span>
+                  <button
+                    type="button"
+                    onClick={resetSearch}
+                    className="text-gray-500 border-b border-gray-400 !rounded-none label-text-alt"
+                  >
+                    Clear search
+                  </button>
+                </>
               )}
             </label>
           </div>
