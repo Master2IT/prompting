@@ -106,15 +106,15 @@ const Prompt = () => {
         </form>
 
         {isEmpty ? (
-          <>
+          <div className="my-10 flex flex-col gap-3">
             <Image
-              className="opacity-70 mt-10"
+              className="opacity-70"
               src="/assets/images/no-data.svg"
               width={150}
               height={150}
             />
-            <span className="mt-3 text-primary ml-5">Not found!</span>
-          </>
+            <span className="mt-3 text-primary pl-10">Not found!</span>
+          </div>
         ) : data.length ? (
           <div className="max-w-md w-full md:max-w-6xl my-10">
             <PromptCardList data={data} handleTagClick={handleTagClick} />
