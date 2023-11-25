@@ -44,6 +44,7 @@ const MyProfile = () => {
 
   return (
     <Profile
+      isSelf={true}
       name="My"
       desc="Welcome to your personalized profile page"
       data={data}

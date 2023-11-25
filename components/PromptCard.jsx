@@ -2,7 +2,7 @@ import { useSession } from "next-auth/react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import moment from "moment";
+import Link from "next/link";
 
 const PromptCard = ({
   data,
@@ -26,21 +26,26 @@ const PromptCard = ({
       <div className="card-body p-4 py-3">
         <div className="flex justify-between">
           <div className="card-title">
-            <Image
-              src={data.creator.image}
-              width={34}
-              height={34}
-              alt={data.creator.username}
-              className="rounded-full"
-            />
-            <h3 className="flex flex-col">
-              <span className="text-gray-700 capitalize">
-                {data.creator.name}
-              </span>
-              <span className="text-sm font-normal text-gray-500">
-                @{data.creator.username}
-              </span>
-            </h3>
+            <Link
+              className="inline-flex items-center gap-2"
+              href={`/profile/${data.creator.username}`}
+            >
+              <Image
+                src={data.creator.image}
+                width={34}
+                height={34}
+                alt={data.creator.username}
+                className="rounded-full"
+              />
+              <h4 className="flex flex-col text-lg">
+                <span className="text-gray-700 capitalize">
+                  {data.creator.name}
+                </span>
+                <span className="text-sm font-normal text-gray-500">
+                  @{data.creator.username}
+                </span>
+              </h4>
+            </Link>
           </div>
           <button
             className={`btn btn-ghost btn-sm ${
