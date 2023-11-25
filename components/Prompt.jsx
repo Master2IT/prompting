@@ -106,7 +106,7 @@ const Prompt = () => {
         </form>
 
         {isEmpty ? (
-          <div className="my-10 flex flex-col gap-3">
+          <div className="my-10 flex flex-col gap-2">
             <Image
               className="opacity-70"
               src="/assets/images/no-data.svg"
