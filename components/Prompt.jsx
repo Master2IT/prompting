@@ -23,14 +23,8 @@ const Prompt = () => {
     setIsEmpty(false);
   };
 
-  useEffect(() => {
-    if (!searchParams.get("search")) {
-      fetchData();
-    }
-  }, []);
-
-  const getSearchData = async () => {
-    const response = await fetch(`/api/prompt?search=${search}`);
+  const getSearchData = async (s) => {
+    const response = await fetch(`/api/prompt?search=${s || search}`);
     const _data = await response.json();
 
     if (!_data.length) setIsEmpty(true);
@@ -48,7 +42,10 @@ const Prompt = () => {
     const s = searchParams.get("search");
     if (s) {
       setSearch(s);
-      getSearchData();
+      getSearchData(s);
+    } else {
+      setSearch("");
+      fetchData();
     }
   }, [param]);
 
