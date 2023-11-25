@@ -2,6 +2,7 @@ import { useSession } from "next-auth/react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import moment from "moment";
 
 const PromptCard = ({
   data,
@@ -37,8 +38,7 @@ const PromptCard = ({
                 {data.creator.name}
               </span>
               <span className="text-sm font-normal text-gray-500">
-                {/* @{data.creator.username} */}
-                {new Date(data.createdAt).toLocaleString()}
+                @{data.creator.username}
               </span>
             </h3>
           </div>
