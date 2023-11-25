@@ -16,17 +16,18 @@ const Form = ({ type, data, setData, submitting, handleSubmit }) => {
       e.preventDefault();
 
       const existsTag = data.tags.findIndex((t) => t == tag);
-      console.log(existsTag);
 
-      if (existsTag == -1) {
-        const newTags = [
-          ...data.tags,
-          tag.replace(" ", "").replace("#", "").toLowerCase(),
-        ];
-        setData({ ...data, tags: newTags });
+      if (tag.match(/^[A-Za-z, 0-9]+$/)) {
+        if (existsTag == -1) {
+          const newTags = [
+            ...data.tags,
+            tag.replace(" ", "").replace("#", "").toLowerCase(),
+          ];
+          setData({ ...data, tags: newTags });
+        }
+
+        setTag("");
       }
-
-      setTag("");
     }
   };
 
@@ -105,7 +106,7 @@ const Form = ({ type, data, setData, submitting, handleSubmit }) => {
           <label className="label">
             <span className="label-text font-medium">
               Tags
-              <span className="font-normal ml-1">(#code, #web_developer)</span>
+              <span className="font-normal ml-1">(code, web_developer)</span>
             </span>
           </label>
           <input
@@ -118,7 +119,8 @@ const Form = ({ type, data, setData, submitting, handleSubmit }) => {
           />
           <label className="label">
             <span className="label-text-alt text-gray-500">
-              Press <span className="font-bold">Enter</span> to add
+              Press <span className="font-bold">Enter</span> to add - Only
+              string (A-Z) accepted
             </span>
           </label>
           <div className="mt-3">
