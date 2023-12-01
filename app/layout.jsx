@@ -1,6 +1,7 @@
 import Nav from "@components/Nav";
 import "@styles/globals.css";
 import Provider from "@components/Provider";
+import Script from "next/script";
 
 export const metadata = {
   title: "Prompting",
@@ -97,6 +98,8 @@ const RootLayout = ({ children }) => {
           {/* <Footer /> */}
         </Provider>
       </body>
+      <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5595968868369218"
+              crossOrigin="anonymous"></Script>
     </html>
   );
 };
