@@ -11,6 +11,7 @@ const RootLayout = ({ children }) => {
   return (
     <html lang="en" data-theme="mytheme">
       <head>
+        <meta name="google-adsense-account" content="ca-pub-5595968868369218" />
         <meta name="application-name" content="Prompting" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
